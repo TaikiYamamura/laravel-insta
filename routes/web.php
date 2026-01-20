@@ -20,6 +20,7 @@ Auth::routes();
 
 #ROUTE
 #ROUTE!
+#ROUTE!!
 #I'm sick!!! I'm sad!!!!
 Route::group(['middleware' => 'auth'], function(){
     Route::get('/', [HomeController::class, 'index'])->name('index');
