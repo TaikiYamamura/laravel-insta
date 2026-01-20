@@ -7,27 +7,10 @@
 <div class="card-body">
     <div class="row align-items-center">
         <div class="col-auto">
-            @if ($post->isLiked())
-                <form action="{{ route('like.destroy', $post->id) }}" method="post">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-sm shadow-none p-0">
-                        <i class="fa-solid fa-heart text-danger"></i>
-                    </button>
-                </form>
-            @else
-                <form action="{{ route('like.store', $post->id) }}" method="post">
-                    @csrf
-                    <button type="submit" class="btn btn-sm shadow-none p-0">
-                        <i class="fa-regular fa-heart"></i>
-                    </button>
-                </form>
-            @endif
-            
-        </div>
-        <div class="col-auto px-0">
-            <span>{{ $post->likes->count() }}</span>
-        </div>
+        <livewire:like-button :post="$post" :key="$post->id" />
+        {{-- @livewire('like-button', ['post' => $post], key($post->id)) --}}
+    </div>
+
         <div class="col text-end">
             @if ($post->categoryPost->isEmpty())
                 <div class="badge bg-dark">
@@ -46,8 +29,14 @@
     <a href="{{ route('profile.show', $post->user->id) }}" class="text-decoration-none text-dark fw-bold">{{ $post->user->name }}</a>
     &nbsp;
     <p class="d-inline fw-light">{{ $post->description }}</p>
-    <p class="text-uppercase text-muted xsmall">{{ date('M d, Y', strtotime($post->created_at)) }}</p>
+
+    <p class="text-uppercase text-muted xsmall">{{ $post->created_at->diffForHumans() }}</p>
 
     {{-- include comments here --}}
-    @include('users.posts.contents.comments')
+    {{-- @include('users.posts.contents.comments') --}}
+
+    {{-- include comments here --}}
+    <livewire:comment-section :post="$post" :key="$post->id" />
+
+
 </div>

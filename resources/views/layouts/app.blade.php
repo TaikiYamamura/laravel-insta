@@ -18,6 +18,9 @@
     {{-- cssと繋いでる --}}
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
+    <!-- Livewireのスタイル -->
+    @livewireStyles
+
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
@@ -72,6 +75,13 @@
                                 <li class="nav-item" title="Create Post">
                                     <a href="{{ route('post.create') }}" class="nav-link">
                                         <i class="fa-solid fa-circle-plus text-dark icon-sm"></i>
+                                    </a>
+                                </li>
+
+                                {{-- Users --}}
+                                <li class="nav-item" title="Users">
+                                    <a href="{{ route('users.index') }}" class="nav-link">
+                                        <i class="fa-solid fa-users text-dark icon-sm"></i>
                                     </a>
                                 </li>
                             
@@ -147,5 +157,8 @@
             
         </main>
     </div>
+
+    <!-- Livewireのスクリプト -->
+    @livewireScripts
 </body>
 </html>
