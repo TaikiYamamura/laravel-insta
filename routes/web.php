@@ -11,10 +11,9 @@ use App\Http\Controllers\ConversationController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserThemeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
-
 
 Auth::routes();
 
@@ -69,5 +68,9 @@ Route::group(['middleware' => 'auth'], function(){
 
     #USER
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
+
+    # THEME
+    Route::post('/user/theme', [UserThemeController::class, 'update'])->name('user.theme');
+    
 });
 

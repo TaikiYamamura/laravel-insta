@@ -53,3 +53,58 @@
     height: 9rem;
     object-fit: cover;
 }
+
+/* モード切り替え */
+
+body {
+    background-color: var(--bg) !important;
+    color: var(--text) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary) !important;
+    color: var(--btn-text) !important;
+}
+
+.card {
+    background-color: var(--card) !important;
+    border-color: var(--border) !important;
+}
+
+/* 4テーマ */
+body.light {
+    --bg: #FFF5EB;
+    --text: #494f54;
+    --card: #DEEDF0;
+    --border: #dee2e6;
+    --primary: #F4C7AB;
+    --btn-text: #B2B8A3;
+}
+
+body.dark {
+    --bg: #121212;
+    --text: #f8f9fa;
+    --card: #1e1e1e;
+    --border: #2a2a2a;
+    --primary: #4dabf7;
+    --btn-text: #000000;
+}
+
+body.solarized {
+    --bg: #fdf6e3;
+    --text: #657b83;
+    --card: #eee8d5;
+    --border: #93a1a1;
+    --primary: #b58900;
+    --btn-text: #ffffff;
+}
+
+body.highcontrast {
+    --bg: #000000;
+    --text: #ffffff;
+    --card: #000000;
+    --border: #ffffff;
+    --primary: #ff00ff;
+    --btn-text: #000000;
+}
+
