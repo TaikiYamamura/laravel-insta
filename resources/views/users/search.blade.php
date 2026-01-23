@@ -5,7 +5,7 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="col-5">
-            <p class="text-muted mb-4">Search result for "<span class="fw-bold">{{ $search }}</span>"</p>
+            <p class="mb-4">Search result for "<span class="fw-bold">{{ $search }}</span>"</p>
 
             @forelse ($users as $user)
                 <div class="row justify-content-center mb-3">
@@ -14,13 +14,13 @@
                             @if ($user->avatar)
                                 <img src="{{ $user->avatar }}" alt="{{ $user->name }}" class="rounded-circle avatar-md">
                             @else
-                                <i class="fa-solid fa-circle-user text-secondary icon-md"></i>
+                                <i class="fa-solid fa-circle-user icon-md"></i>
                             @endif
                         </a>
                     </div>
                     <div class="col ps-0 text-truncate">
-                        <a href="{{ route('profile.show', $user->id) }}" class="text-decoration-none text-dark fw-bold">{{ $user->name }}</a>
-                        <p class="text-muted mb-0">{{ $user->email }}</p>
+                        <a href="{{ route('profile.show', $user->id) }}" class="text-decoration-none fw-bold">{{ $user->name }}</a>
+                        <p class="mb-0">{{ $user->email }}</p>
                     </div>
                     <div class="col-auto">
                         @if ($user->id !== Auth::user()->id)
@@ -41,7 +41,7 @@
                     </div>
                 </div>
             @empty
-                <p class="lead text-muted text-center">No users found</p>
+                <p class="lead text-center">No users found</p>
             @endforelse
         </div>
     </div>

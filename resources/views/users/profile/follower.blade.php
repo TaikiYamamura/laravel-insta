@@ -9,9 +9,9 @@
         <div class="col-4 mx-auto mt-5">
 
             @if ($user->followers->count() == 0)
-                <h1 class="h3 text-secondary fw-bold text-center">No Followers</h1>
+                <h1 class="h3 fw-bold text-center">No Followers</h1>
             @else
-                <h1 class="h3 text-secondary fw-bold text-center">Followers</h1>
+                <h1 class="h3 fw-bold text-center">Followers</h1>
 
                 @foreach ($followers as $follower)
                     <div class="row align-items-center mb-2">
@@ -22,7 +22,7 @@
                                         alt="{{ $follower->follower->name }}"
                                         class="rounded-circle avatar-sm">
                                 @else
-                                    <i class="fa-solid fa-circle-user text-secondary icon-sm"></i>
+                                    <i class="fa-solid fa-circle-user icon-sm"></i>
                                 @endif
                             </a>
                         </div>
@@ -40,7 +40,7 @@
                                     <form action="{{ route('follow.destroy', $follower->follower->id) }}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="border-0 bg-transparent p-0 text-secondary">
+                                        <button type="submit" class="border-0 bg-transparent p-0">
                                             Following
                                         </button>
                                     </form>

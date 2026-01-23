@@ -11,7 +11,7 @@ class UserThemeController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'theme' => 'required|in:light,dark',
+            'theme' => 'required|in:light,dark,solarized,highcontrast',
         ]);
 
         $user = Auth::user();

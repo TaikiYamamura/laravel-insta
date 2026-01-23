@@ -22,14 +22,14 @@
                                         alt="{{ $following->following->name }}"
                                         class="rounded-circle avatar-sm">
                                 @else
-                                    <i class="fa-solid fa-circle-user text-secondary icon-sm"></i>
+                                    <i class="fa-solid fa-circle-user icon-sm"></i>
                                 @endif
                             </a>
                         </div>
 
                         <div class="col ps-0">
                             <a href="{{ route('profile.show', $following->following->id) }}"
-                            class="text-decoration-none text-dark fw-bolder">
+                            class="text-decoration-none fw-bolder">
                                 {{ $following->following->name }}
                             </a>
                         </div>
@@ -40,14 +40,14 @@
                                     <form action="{{ route('follow.destroy', $following->following->id) }}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="border-0 bg-transparent p-0 text-secondary">
+                                        <button type="submit" class="border-0 bg-transparent p-0">
                                             Following
                                         </button>
                                     </form>
                                 @else
                                     <form action="{{ route('follow.store', $following->following->id) }}" method="post">
                                         @csrf
-                                        <button type="submit" class="border-0 bg-transparent p-0 text-primary">
+                                        <button type="submit" class="border-0 bg-transparent p-0">
                                             Follow
                                         </button>
                                     </form>

@@ -1,5 +1,146 @@
+/* 4 type theme */
+body.light {
+--bg:        #F2F1ED;
+--text:      #2E332F;
+--card:      #FBFAF8;
+--border:    #D2D1CA;
+--primary:   #7A8B5A; /* くすみオリーブ */
+--avatar:    #66744D;
+--bar_color: #F6F5F1;
+--box_color: #E6E4DE;
+--btn-text:  #FFFFFF;
+
+}
+
+body.dark {
+    --bg: #121212;
+    --text: #f8f9fa;
+    --card: #1e1e1e;
+    --avatar:  #2f5c64;
+    --border: #2a2a2a;
+    --primary: #4dabf7;
+    --btn-text: #000000;
+}
+
+body.solarized {
+    --bg: #FFF5EB;
+    --text: #494f54;
+    --card: #DEEDF0;
+    --avatar:  #6dbbcb;
+    --border: #dee2e6;
+    --primary: #F4C7AB;
+    --bar_color: #fdf9f5;
+    --box_color: #fef9f5;
+    --btn-text: #B2B8A3;
+}
+
+body.highcontrast {
+    --bg: #f4fcfb;
+    --text: #3F9AAE;
+    --card: #79C9C5;
+    --avatar: #24bbda;
+    --border: #79C9C5;
+    --primary: #F96E5B;
+    --btn-text: #FFE2AF;
+}
+
+/* モード切り替え */
+body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+a {
+  color: var(--text);
+}
+
+a:hover {
+  color: var(--text);
+  opacity: 0.8;
+}
+
+.bar_color{
+  background-color: var(--bar_color);
+}
+
+.box_color{
+  background-color: var(--box_color);
+}
+
+
+/* button design */
+.follow-btn {
+  background-color: var(--primary); /* アクセント */
+  color: var(--btn-text);
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.follow-btn:hover {
+  filter: brightness(110%);
+}
+
+/* フォロー済み
+.follow-btn.following {
+  background-color: var(--bar_color);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+フォロー済み hover
+.follow-btn.following:hover {
+  filter: brightness(105%);
+} */
+
+/* Baloo
+Nunito
+Fredoka
+この辺のフォントがロゴっぽい。洗練されたおしゃれな感じにするなら別のを指定すべき*/
+/* .logo-design{
+    color: var(--primary);
+    font-family: "Baloo Da 2", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+} */
+
+.logo-design{
+    color: var(--primary);
+    font-size: xx-large;
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:"wdth" 100;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--btn-text);
+}
+
+.card {
+    background-color: var(--card);
+    border-color: var(--border);
+}
+
 .icon-sm{
     font-size: 2rem;
+    color: var(--avatar);
+}
+
+.icon-md{
+    font-size: 3.5rem;
+    color: var(--avatar);
+}
+
+.icon-lg{
+    font-size: 9rem;
+    color: var(--avatar);
 }
 
 .image-lg{
@@ -16,19 +157,9 @@
     font-size: 0.65rem;
 }
 
-.icon-lg{
-    font-size: 9rem;
-}
-
 .grid-img{
     width: 100%;
     height: 300px;
-    object-fit: cover;
-}
-
-.avatar-lg{
-    width: 9rem;
-    height: 9rem;
     object-fit: cover;
 }
 
@@ -38,13 +169,15 @@
     object-fit: cover;
 }
 
-.icon-md{
-    font-size: 3.5rem;
-}
-
 .avatar-md{
     width: 3.5rem;
     height: 3.5rem;
+    object-fit: cover;
+}
+
+.avatar-lg{
+    width: 9rem;
+    height: 9rem;
     object-fit: cover;
 }
 
@@ -54,57 +187,4 @@
     object-fit: cover;
 }
 
-/* モード切り替え */
-
-body {
-    background-color: var(--bg) !important;
-    color: var(--text) !important;
-}
-
-.btn-primary {
-    background-color: var(--primary) !important;
-    color: var(--btn-text) !important;
-}
-
-.card {
-    background-color: var(--card) !important;
-    border-color: var(--border) !important;
-}
-
-/* 4テーマ */
-body.light {
-    --bg: #FFF5EB;
-    --text: #494f54;
-    --card: #DEEDF0;
-    --border: #dee2e6;
-    --primary: #F4C7AB;
-    --btn-text: #B2B8A3;
-}
-
-body.dark {
-    --bg: #121212;
-    --text: #f8f9fa;
-    --card: #1e1e1e;
-    --border: #2a2a2a;
-    --primary: #4dabf7;
-    --btn-text: #000000;
-}
-
-body.solarized {
-    --bg: #fdf6e3;
-    --text: #657b83;
-    --card: #eee8d5;
-    --border: #93a1a1;
-    --primary: #b58900;
-    --btn-text: #ffffff;
-}
-
-body.highcontrast {
-    --bg: #000000;
-    --text: #ffffff;
-    --card: #000000;
-    --border: #ffffff;
-    --primary: #ff00ff;
-    --btn-text: #000000;
-}
 

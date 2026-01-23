@@ -5,7 +5,7 @@
                         <ul class="list-group">
                             @foreach ($post->comments->take(3) as $comment)
                                 <li class="list-group-item border-0 p-0 mb-2">
-                                    <a href="{{ route('profile.show', $comment->user->id) }}" class="text-decoration-none text-dark fw-bold">{{ $comment->user->name }}</a>
+                                    <a href="{{ route('profile.show', $comment->user->id) }}" class="text-decoration-none fw-bold">{{ $comment->user->name }}</a>
                                     &nbsp;
                                     <p class="d-inline fw-light">{{ $comment->body }}</p>
 
@@ -13,12 +13,12 @@
                                         @csrf
                                         @method('DELETE')
 
-                                        <span class="text-uppercase text-muted xsmall">{{ date('M d, Y', strtotime($comment->created_at)) }}</span>
+                                        <span class="text-uppercase xsmall">{{ date('M d, Y', strtotime($comment->created_at)) }}</span>
 
                                         {{-- If the author is owner show delete --}}
                                         @if (Auth::user()->id === $comment->user->id)
                                             &middot;
-                                            <button type="submit" class="border-0 bg-transparent text-danger p-0 xsmall">Delete</button>
+                                            <button type="submit" class="border-0 bg-transparent p-0 xsmall">Delete</button>
                                         @endif
                                     </form>
                                 </li>
@@ -41,7 +41,7 @@
         </div>
         {{-- Error --}}
         @error('comment_body' . $post->id)
-            <div class="text-danger small">{{ $message }}</div>
+            <div class="small">{{ $message }}</div>
         @enderror
     </form>
 </div>

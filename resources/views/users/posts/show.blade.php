@@ -16,21 +16,21 @@
         <div class="col p-0 border-end">
             <img src="{{ $post->image }}" alt="post id {{ $post->id }}" class="w-100">
         </div>
-        <div class="col-4 px-0 bg-white">
+        <div class="col-4 px-0">
             <div class="card border-0">
-                <div class="card-header bg-white py-3">
+                <div class="card-header py-3">
                     <div class="row align-items-center">
         <div class="col-auto">
             <a href="{{ route('profile.show', $post->user->id) }}">
                 @if ($post->user->avatar)
                     <img src="{{ $post->user->avatar }}" alt="{{ $post->user->name }}" class="rounded-circle avatar-sm">
                 @else
-                    <i class="fa-solid fa-circle-user text-secondary icon-sm"></i>
+                    <i class="fa-solid fa-circle-user icon-sm"></i>
                 @endif
             </a>
         </div>
         <div class="col ps-0">
-            <a href="{{ route('profile.show', $post->user->id) }}" class="text-decoration-none text-dark">{{ $post->user->name }}</a>
+            <a href="{{ route('profile.show', $post->user->id) }}" class="text-decoration-none">{{ $post->user->name }}</a>
         </div>
         <div class="col-auto">
             @if (Auth::user()->id === $post->user->id)
@@ -43,7 +43,7 @@
                         <a href="{{ route('post.edit', $post->id) }}" class="dropdown-item">
                             <i class="fa-regular fa-pen-to-square"></i> Edit
                         </a>
-                        <button class="dropdown-item text-danger" data-bs-toggle="modal" data-bs-target="#delete-post-{{ $post->id }}">
+                        <button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete-post-{{ $post->id }}">
                             <i class="fa-regular fa-trash-can"></i> Delete
                         </button>
                     </div>
@@ -56,13 +56,13 @@
                                 @csrf
                                 @method('DELETE')
 
-                                <button type="submit" class="border-0 bg-transparent p-0 text-secondary">Following</button>
+                                <button type="submit" class="border-0 bg-transparent p-0">Following</button>
                             </form>
                     @else
                         <form action="{{ route('follow.store', $post->user->id) }}" method="post">
                                 @csrf
 
-                                <button type="submit" class="border-0 bg-transparent p-0 text-primary">Follow</button>
+                                <button type="submit" class="border-0 bg-transparent p-0">Follow</button>
                             </form>
                     @endif
                         
@@ -78,7 +78,7 @@
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-sm shadow-none p-0">
-                        <i class="fa-solid fa-heart text-danger"></i>
+                        <i class="fa-solid fa-heart"></i>
                     </button>
                 </form>
             @else
@@ -96,12 +96,12 @@
         </div>
         <div class="col text-end">
             @if ($post->categoryPost->isEmpty())
-                <div class="badge bg-dark">
+                <div class="badge">
                     Uncategorized
                 </div>
             @else
                 @foreach ($post->categoryPost as $category_post)
-                    <div class="badge bg-secondary bg-opacity-50">
+                    <div class="badge bg-opacity-50">
                         {{ $category_post->category->name }}
                     </div>
                 @endforeach
@@ -109,10 +109,10 @@
         </div>
     </div>
 
-    <a href="{{ route('profile.show', $post->user->id) }}" class="text-decoration-none text-dark fw-bold">{{ $post->user->name }}</a>
+    <a href="{{ route('profile.show', $post->user->id) }}" class="text-decoration-none fw-bold">{{ $post->user->name }}</a>
     &nbsp;
     <p class="d-inline fw-light">{{ $post->description }}</p>
-    <p class="text-uppercase text-muted xsmall">{{ $post->created_at->diffForHumans() }}</p>
+    <p class="text-uppercase xsmall">{{ $post->created_at->diffForHumans() }}</p>
 
                     
 
@@ -125,7 +125,7 @@
                         </div>
                         {{-- Error --}}
                         @error('comment_body' . $post->id)
-                            <div class="text-danger small">{{ $message }}</div>
+                            <div class="small">{{ $message }}</div>
                         @enderror
                     </form>
 
@@ -135,7 +135,7 @@
                         <ul class="list-group mt-2">
                             @foreach ($post->comments as $comment)
                                 <li class="list-group-item border-0 p-0 mb-2">
-                                    <a href="{{ route('profile.show', $post->user->id) }}" class="text-decoration-none text-dark fw-bold">{{ $comment->user->name }}</a>
+                                    <a href="{{ route('profile.show', $post->user->id) }}" class="text-decoration-none fw-bold">{{ $comment->user->name }}</a>
                                     &nbsp;
                                     <p class="d-inline fw-light">{{ $comment->body }}</p>
 
@@ -143,12 +143,12 @@
                                         @csrf
                                         @method('DELETE')
 
-                                        <span class="text-uppercase text-muted xsmall">{{ $comment->created_at->diffForHumans() }}</span>
+                                        <span class="text-uppercase xsmall">{{ $comment->created_at->diffForHumans() }}</span>
 
                                         {{-- If the author is owner show delete --}}
                                         @if (Auth::user()->id === $comment->user->id)
                                             &middot;
-                                            <button type="submit" class="border-0 bg-transparent text-danger p-0 xsmall">Delete</button>
+                                            <button type="submit" class="border-0 bg-transparent p-0 xsmall">Delete</button>
                                         @endif
                                     </form>
                                 </li>

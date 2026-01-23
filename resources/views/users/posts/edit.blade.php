@@ -9,7 +9,7 @@
 
         <div class="mb-3">
             <label for="category" class="form-label d-block fw-bold">
-                Category <span class="text-muted fw-normal">(up to 3)</span>
+                Category <span class="fw-normal">(up to 3)</span>
             </label>
 
             @foreach ($all_categories as $category)
