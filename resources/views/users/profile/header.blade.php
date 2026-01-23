@@ -3,7 +3,7 @@
         @if ($user->avatar)
             <img src="{{ $user->avatar }}" alt="{{ $user->name }}" class="img-thumbnail rounded-circle d-block mx-auto avatar-lg">
         @else
-            <i class="fa-solid fa-circle-user text-secondary d-block text-center icon-lg"></i>
+            <i class="fa-solid fa-circle-user d-block text-center icon-lg"></i>
         @endif
     </div>
     <div class="col-8">
@@ -35,28 +35,28 @@
         <div class="row mb-3">
             <div class="col-auto">
                 @if ($user->posts->count() === 1)
-                    <a href="{{ route('profile.show', $user->id) }}" class="text-decoration-none text-dark">
+                    <a href="{{ route('profile.show', $user->id) }}" class="text-decoration-none">
                         <strong>{{ $user->posts->count() }}</strong> post
                     </a>
                 @else
-                    <a href="{{ route('profile.show', $user->id) }}" class="text-decoration-none text-dark">
+                    <a href="{{ route('profile.show', $user->id) }}" class="text-decoration-none">
                         <strong>{{ $user->posts->count() }}</strong> posts
                     </a>
                 @endif
             </div>
             <div class="col-auto">
                 @if ($user->followers->count() === 1)
-                    <a href="{{ route('profile.follower', $user->id) }}" class="text-decoration-none text-dark">
+                    <a href="{{ route('profile.follower', $user->id) }}" class="text-decoration-none">
                         <strong>{{ $user->followers->count() }}</strong> follower
                     </a>
                 @else
-                    <a href="{{ route('profile.follower', $user->id) }}" class="text-decoration-none text-dark">
+                    <a href="{{ route('profile.follower', $user->id) }}" class="text-decoration-none">
                         <strong>{{ $user->followers->count() }}</strong> followers
                     </a>
                 @endif
             </div>
             <div class="col-auto">
-                <a href="{{ route('profile.following', $user->id) }}" class="text-decoration-none text-dark">
+                <a href="{{ route('profile.following', $user->id) }}" class="text-decoration-none">
                     <strong>{{ $user->following->count() }}</strong> following
                 </a>
             </div>

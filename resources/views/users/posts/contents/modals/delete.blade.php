@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content border-danger">
             <div class="modal-header border-danger">
-                <h3 class="h5 modal-title text-danger">
+                <h3 class="h5 modal-title">
                     <i class="fa-solid fa-circle-exclamation"></i> Delete Post
                 </h3>
             </div>
@@ -10,7 +10,7 @@
                 <p>Are you sure you want to delete this post?</p>
                 <div class="mt-3">
                     <img src="{{ $post->image }}" alt="post id {{ $post->id }}" class="image-lg">
-                    <p class="mt-1 text-muted">{{ $post->description }}</p>
+                    <p class="mt-1">{{ $post->description }}</p>
                 </div>
             </div>
             <div class="modal-footer border-0">

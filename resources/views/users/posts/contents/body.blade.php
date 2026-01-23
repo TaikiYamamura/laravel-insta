@@ -13,12 +13,12 @@
 
         <div class="col text-end">
             @if ($post->categoryPost->isEmpty())
-                <div class="badge bg-dark">
+                <div class="badge">
                     Uncategorized
                 </div>
             @else
                 @foreach ($post->categoryPost as $category_post)
-                    <div class="badge bg-secondary bg-opacity-50">
+                    <div class="badge bg-opacity-50">
                         {{ $category_post->category->name }}
                     </div>
                 @endforeach
@@ -26,11 +26,11 @@
         </div>
     </div>
 
-    <a href="{{ route('profile.show', $post->user->id) }}" class="text-decoration-none text-dark fw-bold">{{ $post->user->name }}</a>
+    <a href="{{ route('profile.show', $post->user->id) }}" class="text-decoration-none fw-bold">{{ $post->user->name }}</a>
     &nbsp;
     <p class="d-inline fw-light">{{ $post->description }}</p>
 
-    <p class="text-uppercase text-muted xsmall">{{ $post->created_at->diffForHumans() }}</p>
+    <p class="text-uppercase xsmall">{{ $post->created_at->diffForHumans() }}</p>
 
     {{-- include comments here --}}
     {{-- @include('users.posts.contents.comments') --}}

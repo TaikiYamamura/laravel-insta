@@ -16,7 +16,7 @@
                         @if ($user->avatar)
                             <img src="{{ $user->avatar }}" alt="{{ $user->name }}" class="img-thumbnail rounded-circle d-block mx-auto avatar-lg">
                         @else
-                            <i class="fa-solid fa-circle-user text-secondary d-block text-canter icon-lg"></i>
+                            <i class="fa-solid fa-circle-user d-block text-canter icon-lg"></i>
                         @endif
                     </div>
                     <div class="col-auto align-self-end">

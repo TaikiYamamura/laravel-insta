@@ -13,7 +13,7 @@
                     @if($user->avatar)
                         <img src="{{ $user->avatar }}" class="rounded-circle mb-2 mx-auto" style="width:50px;height:50px;">
                     @else
-                        <i class="fa-solid fa-circle-user text-secondary fa-2x mb-2"></i>
+                        <i class="fa-solid fa-circle-user fa-2x mb-2"></i>
                     @endif
                     <div>{{ $user->name }}</div>
 
