@@ -16,15 +16,25 @@
         "
         style="max-height:400px; overflow-y:auto;"
     >
-        @foreach($messages as $message)
-    <div class="d-flex mb-2 {{ $message->sender_id === auth()->id() ? 'justify-content-end' : 'justify-content-start' }}">
-        <span class="text-muted xsmall me-1">
+        @php $lastDate = null; @endphp
+
+@foreach($messages as $message)
+    @if ($lastDate !== $message->created_at->toDateString())
+        <div class="text-center text-muted small my-2">
+            —— {{ $message->created_at->format('Y/m/d') }} ——
+        </div>
+        @php $lastDate = $message->created_at->toDateString(); @endphp
+    @endif
+
+    <div class="d-flex mb-3 {{ $message->sender_id === auth()->id() ? 'justify-content-end' : 'justify-content-start' }}" style="position: relative">
+        <div class="text-muted xsmall" style="display:inline-block; position: absolute; top: 40px; right: 43px; font-size: 8px">
+            <div>
             @if($message->read_at && $message->sender_id === auth()->id())
                 既読
             @endif
-        </span>
+            </div>
+        </div>
 
-        
         {{-- 相手のメッセージのときだけ左にアバター --}}
         @if ($message->sender_id !== auth()->id())
             @if ($message->sender->avatar)
@@ -53,6 +63,7 @@
         @endif
     </div>
 @endforeach
+
 
     </div>
 
