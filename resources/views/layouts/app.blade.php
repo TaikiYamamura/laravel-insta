@@ -52,7 +52,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     {{-- [SOON] Search bar here --}}
-                    @auth
+                    {{-- @auth
                         @if (!request()->is('admin/*'))
                             <ul class="navbar-nav ms-auto">
                                 <form action="{{ route('search') }}" style="width: 300px">
@@ -61,7 +61,7 @@
                                 </form>
                             </ul>
                         @endif
-                    @endauth
+                    @endauth --}}
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
@@ -85,6 +85,33 @@
                                     <i class="fa-solid fa-house icon-sm"></i>
                                 </a>
                             </li>
+
+
+                            {{-- Search --}}
+                            <ul class="navbar-nav me-auto">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" href="#" id="searchDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa-solid fa-magnifying-glass icon-sm"></i>
+                                    </a>
+
+                                    <div class="dropdown-menu p-1 shadow" aria-labelledby="searchDropdown" style="min-width: 250px;">
+                                        <form action="{{ route('search') }}" class="d-flex">
+                                            {{-- <input type="search" name="search" class="form-control me-2" placeholder="Search...">
+                                            <button type="submit" class="btn btn-primary btn-sm">Go</button> --}}
+                                            <input type="search" name="search" class="form-control form-control-sm" placeholder="Search...">
+                                        </form>
+
+                                        {{-- <hr class="dropdown-divider"> --}}
+                                        {{-- ここに検索候補やLivewireのユーザーリストを表示できる --}}
+                                        {{-- <div id="search-results"> --}}
+                                            {{-- 例 --}}
+                                            {{-- <a href="#" class="dropdown-item">User 1</a>
+                                            <a href="#" class="dropdown-item">User 2</a> --}}
+                                        {{-- </div> --}}
+                                    </div>
+                                </li>
+                            </ul>
+
 
                             {{-- Create Post --}}
                             <li class="nav-item" title="Create Post">
@@ -192,10 +219,10 @@
                 </div>
                 <div class="modal-body">
                     <div class="d-flex flex-column gap-2">
-                        <button class="btn" onclick="setTheme('light')" data-bs-dismiss="modal">Light</button>
-                        <button class="btn" onclick="setTheme('dark')" data-bs-dismiss="modal">Dark</button>
-                        <button class="btn" onclick="setTheme('solarized')" data-bs-dismiss="modal">Solarized</button>
-                        <button class="btn" onclick="setTheme('highcontrast')" data-bs-dismiss="modal">High Contrast</button>
+                        <button class="btn btn-outline-dark" onclick="setTheme('light')" data-bs-dismiss="modal">Light</button>
+                        <button class="btn btn-outline-dark" onclick="setTheme('dark')" data-bs-dismiss="modal">Dark</button>
+                        <button class="btn btn-outline-dark" onclick="setTheme('solarized')" data-bs-dismiss="modal">Solarized</button>
+                        <button class="btn btn-outline-dark" onclick="setTheme('highcontrast')" data-bs-dismiss="modal">High Contrast</button>
                     </div>
                 </div>
             </div>

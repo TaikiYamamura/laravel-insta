@@ -18,7 +18,7 @@
                 @endforeach
             </div>
         @else
-            
+
         @endif
     </div>
 @endsection
