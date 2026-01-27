@@ -12,21 +12,31 @@ use App\Http\Controllers\LikeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserThemeController;
+use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-#ROUTE
-#ROUTE!
-#ROUTE!!
-#I'm sick!!! I'm sad!!!!
-Route::group(['middleware' => 'auth'], function(){
+Route::group(['middleware' => 'auth'], function () {
     Route::get('/', [HomeController::class, 'index'])->name('index');
-    Route::get('/people', [HomeController::class, 'search'])->name('search');
+    // Route::get('/search', [HomeController::class, 'search'])->name('search');
+    Route::get('/search', function () {
+        return view('users.search', ['query' => request('search')]);
+    })->name('search');
+    Route::get('/categories/{category}', function ($category) {
+        if ($category === 'uncategorized') {
+            $cat = null;
+        } else {
+            $cat = Category::findOrFail($category);
+        }
+        return view('users.categories.show', ['category' => $cat]);
+    })->name('categories.show');
+
+
     Route::get('/dm/{user}', [ConversationController::class, 'show'])->name('dm.show');
 
-    Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'admin'], function(){
+    Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'admin'], function () {
         Route::get('/users', [UsersController::class, 'index'])->name('users');
         Route::get('/posts', [PostsController::class, 'index'])->name('posts');
         Route::get('/categories', [CategoriesController::class, 'index'])->name('categories');
@@ -71,6 +81,4 @@ Route::group(['middleware' => 'auth'], function(){
 
     # THEME
     Route::post('/user/theme', [UserThemeController::class, 'update'])->name('user.theme');
-    
 });
-

@@ -39,9 +39,7 @@
                 </div>
             </div>
 
-
             {{-- Suggestions --}}
-
             @if ($suggested_users)
                 <div class="row shadow-sm rounded-3 py-3 px-2 box_color">
                     <div class="col-auto my-2">
@@ -68,7 +66,7 @@
                             <div class="col-auto">
                                 <form action="{{ route('follow.store', $user->id) }}" method="post">
                                     @csrf
-                                    <button class="border-0 btn-sm follow-btn" type="submit">
+                                    <button class="border-0 btn-sm default-btn" type="submit">
                                         <i class="fa-regular fa-plus"></i> Follow
                                     </button>
                                 </form>

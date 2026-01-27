@@ -9,7 +9,7 @@
                 @csrf
                 @method('PATCH')
 
-                <h2 class="h3 mb-3 fw-light text-muted">Edit Profile</h2>
+                <h2 class="h3 mb-3 fw-light">Edit Profile</h2>
 
                 <div class="row mb-3">
                     <div class="col-4">
@@ -44,7 +44,7 @@
                     {{-- error --}}
                 </div>
 
-                <button type="submit" class="btn btn-warning px-5">Save</button>
+                <button type="submit" class="btn default-btn px-5">Save</button>
             </form>
         </div>
     </div>

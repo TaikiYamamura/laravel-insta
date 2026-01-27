@@ -18,7 +18,7 @@
                 </div>
             @else
                 @foreach ($post->categoryPost as $category_post)
-                    <div class="badge bg-opacity-50">
+                    <div class="badge custom-badge">
                         {{ $category_post->category->name }}
                     </div>
                 @endforeach
