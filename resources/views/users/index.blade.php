@@ -18,7 +18,7 @@
                     <div>{{ $user->name }}</div>
 
                     @if($user->id !== auth()->id())
-                        <a href="{{ route('dm.show', $user->id) }}" class="btn btn-sm btn-primary mt-2">DM</a>
+                        <a href="{{ route('dm.show', $user->id) }}" class="btn btn-sm follow-btn mt-2">DM</a>
                     @endif
                 </div>
             </div>
