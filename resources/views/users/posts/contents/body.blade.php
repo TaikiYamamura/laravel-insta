@@ -7,26 +7,25 @@
 <div class="card-body">
     <div class="row align-items-center">
         <div class="col-auto">
-        <livewire:like-button :post="$post" :key="$post->id" />
-        {{-- @livewire('like-button', ['post' => $post], key($post->id)) --}}
-    </div>
+            <livewire:like-button :post="$post" :key="$post->id" />
+            {{-- @livewire('like-button', ['post' => $post], key($post->id)) --}}
+        </div>
 
         <div class="col text-end">
             @if ($post->categoryPost->isEmpty())
-                <div class="badge">
-                    Uncategorized
-                </div>
+                <a href="{{ route('categories.show', ['category' => 'uncategorized']) }}"
+                    class="badge custom-badge">Uncategorized</a>
             @else
                 @foreach ($post->categoryPost as $category_post)
-                    <div class="badge custom-badge">
-                        {{ $category_post->category->name }}
-                    </div>
+                    <a href="{{ route('categories.show', ['category' => $category_post->category->id]) }}"
+                        class="badge custom-badge">{{ $category_post->category->name }}</a>
                 @endforeach
             @endif
         </div>
     </div>
 
-    <a href="{{ route('profile.show', $post->user->id) }}" class="text-decoration-none fw-bold">{{ $post->user->name }}</a>
+    <a href="{{ route('profile.show', $post->user->id) }}"
+        class="text-decoration-none fw-bold">{{ $post->user->name }}</a>
     &nbsp;
     <p class="d-inline fw-light">{{ $post->description }}</p>
 

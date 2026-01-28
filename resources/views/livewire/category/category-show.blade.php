@@ -28,7 +28,7 @@
         <li class="nav-item">
             <a href="#" wire:click.prevent="setTab('categories')"
                 class="nav-link {{ $activeTab === 'categories' ? 'active' : '' }}">
-                <i class="fa-solid fa-tag small mt-1"></i> Categories
+                <i class="fa-solid fa-tag small mt-1"></i> All Categories
             </a>
         </li>
     </ul>
@@ -109,14 +109,14 @@
         <div class="d-flex flex-wrap gap-2">
             @foreach ($categories as $c)
                 <a href="{{ route('categories.show', $c->id) }}"
-                    class="badge custom-badge custom-badge-lg text-decoration-none">
+                    class="badge custom-badge custom-badge-lg">
                     {{ $c->name }}
                 </a>
             @endforeach
 
             {{-- Uncategorized も追加 --}}
             <a href="{{ route('categories.show', 'uncategorized') }}"
-                class="badge custom-badge custom-badge-lg text-decoration-none">
+                class="badge custom-badge custom-badge-lg">
                 Uncategorized
             </a>
         </div>
