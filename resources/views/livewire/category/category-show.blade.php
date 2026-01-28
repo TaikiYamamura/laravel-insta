@@ -120,6 +120,5 @@
                 Uncategorized
             </a>
         </div>
-
     @endif
 </div>
