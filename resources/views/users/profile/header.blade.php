@@ -1,11 +1,19 @@
 <div class="row">
-    <div class="col-4">
-        @if ($user->avatar)
-            <img src="{{ $user->avatar }}" alt="{{ $user->name }}" class="img-thumbnail rounded-circle d-block mx-auto avatar-lg">
-        @else
-            <i class="fa-solid fa-circle-user d-block text-center icon-lg"></i>
-        @endif
-    </div>
+    <div class="col-4 position-relative">
+
+    @if ($user->avatar)
+        <img src="{{ $user->avatar }}"
+            alt="{{ $user->name }}"
+            class="img-thumbnail rounded-circle d-block mx-auto avatar-lg">
+    @else
+        <i class="fa-solid fa-circle-user d-block text-center icon-lg"></i>
+    @endif
+
+    {{-- notes --}}
+    @livewire('user-note', ['user' => $user])
+
+</div>
+
     <div class="col-8">
         <div class="row mb-3">
             <div class="col-auto">

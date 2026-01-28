@@ -40,7 +40,7 @@
             </div>
 
             {{-- Suggestions --}}
-            @if ($suggested_users)
+            {{-- @if ($suggested_users)
                 <div class="row shadow-sm rounded-3 py-3 px-2 box_color">
                     <div class="col-auto my-2">
                         <p class="fw-bold">Suggestions For You</p>
@@ -72,9 +72,16 @@
                                 </form>
                             </div>
                         </div>
-                    @endforeach
-                </div>
-            @endif
+                    @endforeach --}}
+
+
+                {{-- </div>
+            @endif --}}
+
+            <livewire:suggestions-list />
+
         </div>
     </div>
+
+    @include('users.modals.suggestions')
 @endsection
