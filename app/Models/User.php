@@ -78,4 +78,10 @@ class User extends Authenticatable
             ->exists();
     }
 
+    public function note()
+    {
+        return $this->hasOne(Note::class);
+    }
+
+
 }
