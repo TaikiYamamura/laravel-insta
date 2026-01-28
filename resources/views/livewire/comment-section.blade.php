@@ -5,12 +5,12 @@
         <ul class="list-group">
             @foreach ($comments->take(3) as $comment)
                 <li class="list-group-item border-0 p-0 mb-2">
-                    <a href="{{ route('profile.show', $comment->user->id) }}" class="text-decoration-none text-dark fw-bold">{{ $comment->user->name }}</a>
+                    <a href="{{ route('profile.show', $comment->user->id) }}" class="text-decoration-none fw-bold">{{ $comment->user->name }}</a>
                     &nbsp;
                     <p class="d-inline fw-light">{{ $comment->body }}</p>
 
                     {{-- <span class="text-uppercase text-muted xsmall">{{ $comment->created_at->format('M d, Y') }}</span> --}}
-                    <span class="text-uppercase text-muted xsmall">{{ $comment->created_at->diffForHumans() }}</span>
+                    <span class="text-uppercase xsmall">{{ $comment->created_at->diffForHumans() }}</span>
 
 
                     @if (Auth::id() === $comment->user_id)
@@ -32,7 +32,7 @@
     <form wire:submit.prevent="addComment">
         <div class="input-group">
             <textarea wire:model.defer="newComment" rows="1" class="form-control form-control-sm" placeholder="Add a comment..."></textarea>
-            <button type="submit" class="btn btn-outline-secondary btn-sm">Post</button>
+            <button type="submit" class="btn btn-sm">Post</button>
         </div>
         @error('newComment') 
             <div class="text-danger small">{{ $message }}</div>

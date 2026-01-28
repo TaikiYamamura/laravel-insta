@@ -105,7 +105,6 @@
                             @endif
                         </div>
 
-
                         <a href="{{ route('profile.show', $post->user->id) }}"
                             class="text-decoration-none fw-bold">{{ $post->user->name }}</a>
                         &nbsp;
@@ -131,7 +130,7 @@
                         @if ($post->comments->isNotEmpty())
                             <ul class="list-group mt-2">
                                 @foreach ($post->comments as $comment)
-                                    <li class="list-group-item border-0 p-0 mb-2">
+                                    <li class="list-group-item border-0 p-0 mb-2 ms-3">
                                         <a href="{{ route('profile.show', $post->user->id) }}"
                                             class="text-decoration-none fw-bold">{{ $comment->user->name }}</a>
                                         &nbsp;
@@ -147,8 +146,7 @@
                                             {{-- If the author is owner show delete --}}
                                             @if (Auth::user()->id === $comment->user->id)
                                                 &middot;
-                                                <button type="submit"
-                                                    class="border-0 bg-transparent p-0 xsmall">Delete</button>
+                                                <button type="submit" class="border-0 bg-transparent text-danger p-0 xsmall">Delete</button>
                                             @endif
                                         </form>
                                     </li>
