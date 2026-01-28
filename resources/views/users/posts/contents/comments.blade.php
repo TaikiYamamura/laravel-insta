@@ -4,7 +4,7 @@
         <hr>
                         <ul class="list-group">
                             @foreach ($post->comments->take(3) as $comment)
-                                <li class="list-group-item border-0 p-0 mb-2">
+                                <li class="list-group-item border-0 p-1 mb-2">
                                     <a href="{{ route('profile.show', $comment->user->id) }}" class="text-decoration-none fw-bold">{{ $comment->user->name }}</a>
                                     &nbsp;
                                     <p class="d-inline fw-light">{{ $comment->body }}</p>
@@ -25,7 +25,7 @@
                             @endforeach
 
                             @if ($post->comments->count() > 3)
-                                <li class="list-group-item border-0 px-0 pt-0">
+                                <li class="list-group-item border-0 px-1 pt-1">
                                     <a href="{{ route('post.show', $post->id) }}" class="text-decoration-none small">View all {{ $post->comments->count() }} comments</a>
                                 </li>
                             @endif
@@ -37,7 +37,7 @@
 
         <div class="input-group">
             <textarea name="comment_body{{ $post->id }}" rows="1" class="form-control form-control-sm" placeholder="Add a comment...">{{ old('comment_body' . $post->id) }}</textarea>
-            <button type="submit" class="btn btn-outline-secondary btn-sm">Post</button>
+            <button type="submit" class="btn btn-sm default-btn">Post</button>
         </div>
         {{-- Error --}}
         @error('comment_body' . $post->id)
