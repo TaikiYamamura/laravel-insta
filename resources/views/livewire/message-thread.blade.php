@@ -47,7 +47,7 @@
         @endif
 
         <span class="d-inline-block p-2 rounded
-            {{ $message->sender_id === auth()->id() ? 'bg-info text-white' : 'bg-light' }}">
+            {{ $message->sender_id === auth()->id() ? 'bg-light text-dark' : 'bg-light text-dark' }}">
             {{ $message->body }}
         </span>
 
@@ -74,6 +74,6 @@
             class="form-control me-2"
             placeholder="Type a message..."
         >
-        <button class="btn default-btn">Send</button>
+        <button class="btn follow-btn">Send</button>
     </form>
 </div>

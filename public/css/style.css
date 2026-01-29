@@ -274,6 +274,33 @@ Fredoka
 .card-body .list-group li {
     color: var(--text);        /* 文字色 */
     background-color: var(--bg); /* 背景色 */
+
+  
+.note-bubble {
+    position: absolute;
+    top: -180px;
+    left: 8px;
+    background: #f0e6ff;
+    border-radius: 18px;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.note-bubble::before {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 14px;
+    border: 6px solid transparent;
+    border-top-color: #f0e6ff;
+}
+
+.note-time {
+    font-size: 0.7rem;
+    color: #666;
+    text-align: right;
 }
 
 

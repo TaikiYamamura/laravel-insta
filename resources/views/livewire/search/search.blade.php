@@ -73,7 +73,9 @@
         <div id="categories" class="tab-pane fade">
             <div class="d-flex flex-wrap gap-2">
                 @forelse($categories as $category)
-                    <span class="badge custom-badge custom-badge-lg">{{ $category->name }}</span>
+                    <a href="{{ route('categories.show', ['category' => $category->id]) }}">
+                        <span class="badge custom-badge custom-badge-lg">{{ $category->name }}</span>
+                    </a>
                 @empty
                     <p>No categories found</p>
                 @endforelse
