@@ -277,4 +277,11 @@ Fredoka
     text-align: right;
 }
 
+.story-avatar {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #ff3d6a;
+    padding: 2px;
+}
+
 
