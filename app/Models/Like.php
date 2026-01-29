@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Like extends Model
 {
+    protected $primaryKey = ['user_id', 'user_id'];
+    public $incrementing = false;
+
     public $timestamps = false;
 
     protected $fillable = [

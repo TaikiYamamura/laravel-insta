@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Follow extends Model
 {
+    protected $primaryKey = ['follower_id', 'following_id'];
+    public $incrementing = false;
+    
     public $timestamps = false;
 
     // Mass Assignment 対応
