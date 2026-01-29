@@ -74,6 +74,6 @@
             class="form-control me-2"
             placeholder="Type a message..."
         >
-        <button class="btn follow-btn">Send</button>
+        <button class="btn default-btn">Send</button>
     </form>
 </div>
