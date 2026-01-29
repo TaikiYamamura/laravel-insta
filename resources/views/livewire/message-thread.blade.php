@@ -42,7 +42,7 @@
                     class="rounded-circle me-2"
                     style="width:32px; height:32px;">
             @else
-                <i class="fa-solid fa-circle-user text-secondary me-2"></i>
+                <i class="fa-solid fa-circle-user me-2"></i>
             @endif
         @endif
 
@@ -74,6 +74,6 @@
             class="form-control me-2"
             placeholder="Type a message..."
         >
-        <button class="btn btn-primary">Send</button>
+        <button class="btn default-btn">Send</button>
     </form>
 </div>

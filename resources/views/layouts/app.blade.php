@@ -219,10 +219,10 @@
                 </div>
                 <div class="modal-body">
                     <div class="d-flex flex-column gap-2">
-                        <button class="btn btn-outline-dark" onclick="setTheme('light')" data-bs-dismiss="modal">Light</button>
-                        <button class="btn btn-outline-dark" onclick="setTheme('dark')" data-bs-dismiss="modal">Dark</button>
-                        <button class="btn btn-outline-dark" onclick="setTheme('solarized')" data-bs-dismiss="modal">Solarized</button>
-                        <button class="btn btn-outline-dark" onclick="setTheme('highcontrast')" data-bs-dismiss="modal">High Contrast</button>
+                        <button class="btn default-btn" onclick="setTheme('light')" data-bs-dismiss="modal">Light</button>
+                        <button class="btn default-btn" onclick="setTheme('dark')" data-bs-dismiss="modal">Dark</button>
+                        <button class="btn default-btn" onclick="setTheme('japan')" data-bs-dismiss="modal">Japan</button>
+                        <button class="btn default-btn" onclick="setTheme('philippines')" data-bs-dismiss="modal">Philippines</button>
                     </div>
                 </div>
             </div>
@@ -232,7 +232,7 @@
     <!-- Mode setting JS -->
     <script>
     async function setTheme(theme) {
-        document.body.classList.remove('light','dark','solarized','highcontrast');
+        document.body.classList.remove('light','dark','japan','philippines');
         document.body.classList.add(theme);
 
         const res = await fetch('{{ route('user.theme') }}', {

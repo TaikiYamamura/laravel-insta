@@ -1,14 +1,16 @@
 /* 4 type theme */
 body.light {
---bg:        #F2F1ED;
---text:      #2E332F;
---card:      #FBFAF8;
---border:    #D2D1CA;
---primary:   #7A8B5A; /* くすみオリーブ */
---avatar:    #66744D;
---bar_color: #F6F5F1;
---box_color: #E6E4DE;
---btn-text:  #FFFFFF;
+  --bg:        #F2F1ED;
+  --text:      #2E332F;
+  --card:      #FBFAF8;
+  --border:    #D2D1CA;
+  --primary:   #7A8B5A;
+  --avatar:    #66744D;
+  --bar_color: #F6F5F1;
+  --box_color: #E6E4DE;
+  --btn-text:  #FFFFFF;
+  --shadow:    rgba(0,0,0,0.08);
+  --highlight: #EDEBE5;
 }
 
 body.dark {
@@ -21,58 +23,25 @@ body.dark {
     --btn-text:  #F5F5F5;  /* ボタン文字も白で読みやすく */
     --bar_color: #323933;  /* ヘッダー・ナビバー背景 */
     --box_color: #3B423D;  /* 入力欄・カード内背景 */
+    --highlight: #4A504B;
     --shadow:    rgba(0,0,0,0.4); /* 影で立体感 */
 }
 
-
-body.solarized {
+body.japan {
 --bg:        #FAF9F5;
 --text:      #3B3A36;
 --card:      #FFFFFF;
 --border:    #DCD8D0;
---primary:   #B05C5C; 
---avatar:    #8A3B3B;
+--primary:   #c3433f; 
+--avatar:    #C73E3A;
 --bar_color: #F6F5F0;
---box_color: #EAE6E0;
+--box_color: #F5F5F0;
 --btn-text:  #FFFFFF;
+--highlight: #5D4E37;   /* ハイライト色 */
+--shadow:    rgba(0,0,0,0.15); /* 軽いシャドウ */
 }
 
-/* body.solarized {
-    --bg: #FFF5EB;
-    --text: #494f54;
-    --card: #DEEDF0;
-    --avatar:  #6dbbcb;
-    --border: #dee2e6;
-    --primary: #F4C7AB;
-    --bar_color: #fdf9f5;
-    --box_color: #fef9f5;
-    --btn-text: #B2B8A3;
-} */
-
-/* body.highcontrast {
---bg:        #FFF8F0;
---text:      #3A2C2A;
---card:      #FFFAF2;
---border:    #F5E6D8;
---primary:   #FF6F61; 
---avatar:    #FF8A75;
---bar_color: #FFF1E6;
---box_color: #FFE7D9;
---btn-text:  #FFFFFF;
-} */
-
-
-/* body.highcontrast {
-    --bg: #f4fcfb;
-    --text: #3F9AAE;
-    --card: #79C9C5;
-    --avatar: #24bbda;
-    --border: #79C9C5;
-    --primary: #F96E5B;
-    --btn-text: #FFE2AF;
-} */
-
-body.highcontrast {
+body.philippines {
     --bg:        #f4fcfb;   /* 背景 */
     --text:      #3F9AAE;   /* 文字 */
     --card:      #79C9C5;   /* カード */
@@ -200,7 +169,7 @@ span {
 Nunito
 Fredoka
 この辺のフォントがロゴっぽい。洗練されたおしゃれな感じにするなら別のを指定すべき*/
-/* .logo-design{
+.logo-design{
     color: var(--primary);
         font-size: xx-large;
     font-family: "Baloo Da 2", sans-serif;
@@ -208,9 +177,9 @@ Fredoka
     font-weight: 700;
     font-style: normal;
     font-variation-settings:"wdth" 100;
-} */
+}
 
-.logo-design{
+/* .logo-design{
     color: var(--primary);
     font-size: xx-large;
     font-family: "Fredoka", sans-serif;
@@ -218,7 +187,7 @@ Fredoka
     font-weight: 600;
     font-style: normal;
     font-variation-settings:"wdth" 100;
-}
+} */
 
 .btn-primary {
     background-color: var(--primary);
