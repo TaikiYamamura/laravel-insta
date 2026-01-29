@@ -43,16 +43,16 @@
             </div>
 
             {{-- Suggestions --}}
-            @if ($suggested_users)
+            {{-- @if ($suggested_users)
                 <div class="row shadow-sm rounded-3 py-3 px-2 box_color">
                     <div class="col-auto my-2">
                         <p class="fw-bold">Suggestions For You</p>
                     </div>
                     <div class="col text-end my-2">
                         <a href="#" class="fw-bold text-decoration-none pe-5">See all</a>
-                    </div>
+                    </div> --}}
 
-                    @foreach ($suggested_users as $user)
+                    {{-- @foreach ($suggested_users as $user)
                         <div class="row align-items-center mb-3">
                             <div class="col-auto">
                                 <a href="{{ route('profile.show', $user->id) }}">
@@ -75,7 +75,7 @@
                                 </form>
                             </div>
                         </div>
-                    @endforeach --}}
+                    @endforeach  --}}
 
 
                 {{-- </div>
