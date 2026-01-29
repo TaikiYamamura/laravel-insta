@@ -75,9 +75,15 @@
                                 </form>
                             </div>
                         </div>
-                    @endforeach
-                </div>
-            @endif
+                    @endforeach --}}
+
+
+                {{-- </div>
+            @endif --}}
+
+            <livewire:suggestions-list />
+            {{-- hello --}}
+
         </div>
     </div>
 @endsection
