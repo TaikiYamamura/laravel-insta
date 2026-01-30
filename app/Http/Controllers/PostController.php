@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Auth;
 class PostController extends Controller
 {
     private $post;
-
     private $category;
 
     public function __construct(Post $post, Category $category)
